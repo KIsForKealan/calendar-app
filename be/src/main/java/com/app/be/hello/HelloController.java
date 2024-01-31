@@ -1,4 +1,4 @@
-package com.app.be;
+package com.app.be.hello;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
