@@ -1,49 +1,16 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <script src="checkForClash.js"></script>
+        <script src="script.js"></script>
+    </head>
     <body>
         <h2>Heading demo JS json</h2>
         <p id="name-input-label">Name</p>
         <input id="input-demo" />
-        <button type="button" onclick="myFunction()">Try it</button>
+        <button type="button" onclick="doPostName()">Try it</button>
 
         <div id="results"></div>
-
-        <script>
-            function myFunction() {
-
-                const inputString = document.getElementById("input-demo").value;
-                const element = JSON.stringify({ name: inputString });
-                console.log("element : "+element)
-
-                const requestOptions = {
-                    method: "GET",
-                    headers: {
-                        "Access-Control-Allow-Headers": "Origin, Content-Type",
-                        "Access-Control-Allow-Origin": "http://localhost:8080",
-                        "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE"
-                    }
-                };
-
-                fetch("http://localhost:8080/api/hello?name="+inputString, requestOptions)
-                    .then(response => response.json())
-                    .then(function (data) {
-                        
-                        console.log(JSON.stringify(data));
-                        document.getElementById("results").innerHTML = "";
-                        
-                        Object.entries(data).forEach((entry) => {
-                            const [key, value] = entry;
-                            console.log(`${key}: ${value}`);
-
-                            var _p = document.createElement("p");
-                            _p.innerHTML = `${key}: ${value}`;
-                            document.getElementById("results").append(_p);
-                        });
-                     
-                    })
-                    .catch(err => console.log(err));
-
-            }
-        </script>
+        <script>testClashTypes()</script>
     </body>
 </html>
