@@ -1,3 +1,22 @@
+/**
+ * Time Period Relations
+ * 
+ * ----------xxxxxxxxxx---------- Event A
+ * ----------|--------|----------
+ * --xxxxx----------------------- AFTER
+ * --xxxxxxxx-------------------- START_TOUCHING
+ * --xxxxxxxxxxxx---------------- START_INSIDE
+ * ----------xxxxxxxxxxxxxxx----- INSIDE_START_TOUCHING
+ * ----------xxxxxxx------------- ENCLOSING_START_TOUCHING
+ * ------------xxxxx------------- ENCLOSING
+ * --------------xxxxxx---------- ENCLOSING_END_TOUCHING
+ * ----------xxxxxxxxxx---------- EXACT_MATCH
+ * --------xxxxxxxxxxxxxxxx------ INSIDE
+ * --------xxxxxxxxxxxx---------- INSIDE_END_TOUCHING
+ * -----------------xxxxxxx------ END_INSIDE
+ * --------------------xxxxx----- END_TOUCHING
+ * -----------------------xxxxx-- BEFORE
+ */
 class TimePeriodRelation {
 
     static AFTER = new TimePeriodRelation("AFTER");
